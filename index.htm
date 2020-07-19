@@ -2,17 +2,396 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <title>freeCodeCamp Survey Form</title>
+    <title>freeCodeCamp Technical Documentation</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <nav id="navbar">
+      <header>
+        <h1>Powershell 7</h1>
+        <p>Technical description of Powershell 7</p>
+      </header>
+      <button>
+        <a href="#What_is_PowerShell?" class="nav-link">What is PowerShell?</a>
+      </button>
+      <button>
+        <a href="#Output_is_object-based" class="nav-link"
+          >Output is object-based</a
+        >
+      </button>
+      <button>
+        <a href="#The_command_family_is_extensible" class="nav-link"
+          >The command family is extensible</a
+        >
+      </button>
+      <button>
+        <a href="#Support_for_command_aliases" class="nav-link"
+          >Support for command aliases</a
+        >
+      </button>
+      <button>
+        <a href="#PowerShell_handles_console_input_and_display" class="nav-link"
+          >PowerShell handles console input and display</a
+        >
+      </button>
+      <button>
+        <a href="#PowerShell_has_a_pipeline" class="nav-link"
+          >PowerShell has a pipeline</a
+        >
+      </button>
+      <button>
+        <a href="#Objects_in_the_pipeline" class="nav-link"
+          >Objects in the pipeline</a
+        >
+      </button>
+      <button>
+        <a href="#Built-in_help_system" class="nav-link"
+          >Built-in help system</a
+        >
+      </button>
+      <button>
+        <a href="#More_on_powershell" class="nav-link">More on powershell</a>
+      </button>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="What_is_PowerShell?">
+        <header>
+          <p>What is PowerShell?</p>
+        </header>
+        <article>
+          <p>
+            PowerShell is a cross-platform task automation and configuration
+            management framework, consisting of a command-line shell and
+            scripting language. Unlike most shells, which accept and return
+            text, PowerShell is built on top of the .NET Common Language Runtime
+            (CLR), and accepts and returns .NET objects. This fundamental change
+            brings entirely new tools and methods for automation.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Output_is_object-based">
+        <header>
+          <p>Output is object-based</p>
+        </header>
+        <article>
+          <p>
+            Unlike traditional command-line interfaces, PowerShell cmdlets are
+            designed to deal with objects. An object is structured information
+            that is more than just the string of characters appearing on the
+            screen. Command output always carries extra information that you can
+            use if you need it.
+          </p>
+          <p>
+            If you've used text-processing tools to process data in the past,
+            you'll find that they behave differently when used in PowerShell. In
+            most cases, you don't need text-processing tools to extract specific
+            information. You directly access portions of the data using standard
+            PowerShell object syntax.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="The_command_family_is_extensible">
+        <header>
+          <p>
+            The command family is extensible
+          </p>
+        </header>
+        <article>
+          <p>
+            Interfaces such as cmd.exe don't provide a way for you to directly
+            extend the built-in command set. You can create external
+            command-line tools that run in cmd.exe. But these external tools
+            don't have services, such as Help integration. cmd.exe doesn't
+            automatically know that these external tools are valid commands.
+          </p>
+          <p>
+            The commands in PowerShell are known as cmdlets. You can use each
+            cmdlet separately, but their power is realized when you combine them
+            to perform complex tasks. Like many shells, PowerShell gives you
+            access to the file system on the computer. PowerShell providers
+            enable you to access other data stores, such as the registry and the
+            certificate stores, as easily as you access the file system.
+          </p>
+          <p>
+            You can create your own cmdlet and function modules using compiled
+            code or scripts. Modules can add cmdlets and providers to the shell.
+            PowerShell also supports scripts that are analogous to UNIX shell
+            scripts and cmd.exe batch files.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Support_for_command_aliases">
+        <header>
+          <p>Support for command aliases</p>
+        </header>
+        <article>
+          <p>
+            PowerShell supports aliases to refer to commands by alternate names.
+            Aliasing allows users with experience in other shells to use common
+            command names that they already know for similar operations in
+            PowerShell.
+          </p>
+          <p>
+            Aliasing associates a new name with another command. For example,
+            PowerShell has an internal function named Clear-Host that clears the
+            output window. You can type either the cls or clear alias at a
+            command prompt. PowerShell interprets these aliases and runs the
+            Clear-Host function.
+          </p>
+          <p>
+            This feature helps users to learn PowerShell. First, most cmd.exe
+            and Unix users have a large repertoire of commands that users
+            already know by name. The PowerShell equivalents may not produce
+            identical results. However, the results are close enough that users
+            can do work without knowing the PowerShell command name. "Muscle
+            memory" is another major source of frustration when learning a new
+            command shell. If you have used cmd.exe for years, you might
+            reflexively type the cls command to clear the screen. Without the
+            alias for Clear-Host, you receive an error message and won't know
+            what to do to clear the output.
+          </p>
+        </article>
+      </section>
+      <section
+        class="main-section"
+        id="PowerShell_handles_console_input_and_display"
+      >
+        <header>
+          <p>
+            PowerShell handles console input and display
+          </p>
+        </header>
+        <article>
+          <p>
+            When you type a command, PowerShell always processes the
+            command-line input directly. PowerShell also formats the output that
+            you see on the screen. This difference is significant because it
+            reduces the work required of each cmdlet. It ensures that you can
+            always do things the same way with any cmdlet. Cmdlet developers
+            don't need to write code to parse the command-line arguments or
+            format the output.
+          </p>
+          <p>
+            Traditional command-line tools have their own schemes for requesting
+            and displaying Help. Some command-line tools use /? to trigger the
+            Help display; others use -?, /H, or even //. Some will display Help
+            in a GUI window, rather than in the console display. If you use the
+            wrong parameter, the tool might ignore what you typed and begin
+            executing a task automatically. Since PowerShell automatically
+            parses and processes the command line, the -? parameter always means
+            "show me Help for this command".
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="PowerShell_has_a_pipeline">
+        <header>
+          <p>PowerShell has a pipeline</p>
+        </header>
+        <article>
+          <p>
+            Pipelines are arguably the most valuable concept used in
+            command-line interfaces. When used properly, pipelines reduce the
+            effort of using complex commands and make it easier to see the flow
+            of work. Each command in a pipeline passes its output, item by item,
+            to the next command. Commands don't have to handle more than one
+            item at a time. The result is reduced resource consumption and the
+            ability to get output immediately.
+          </p>
+          <p>
+            The notation used for pipelines is similar to the notation used in
+            other shells. At first glance, it may not be apparent how pipelines
+            are different in PowerShell. Although you see text on the screen,
+            PowerShell pipes objects, not text, between commands.
+          </p>
+          <p>
+            For example, if you use the Out-Host cmdlet to force a page-by-page
+            display of output from another command, the output looks just like
+            the normal text displayed on the screen, broken up into pages:
+          </p>
+          <code>
+            <pre>
+				PowerShell:
+				Get-ChildItem | Out-Host -Paging
+			</pre
+            >
+          </code>
+          <code>
+            <pre>
+				Output:
+				Directory: /mnt/c/Git/PS-Docs/PowerShell-Docs/reference/7.0/Microsoft.PowerShell.Core
+
+				Mode LastWriteTime Length Name
+				---- ------------- ------ ----
+				d---- 05/22/2020 08:30 About
+				----- 05/20/2020 14:36 9044 Add-History.md
+				----- 05/20/2020 14:36 12227 Clear-History.md
+				----- 05/20/2020 14:36 3566 Clear-Host.md
+				----- 05/20/2020 14:36 29087 Connect-PSSession.md
+				----- 05/20/2020 14:36 5705 Debug-Job.md
+				----- 05/20/2020 14:36 3515 Disable-ExperimentalFeature.md
+				----- 05/20/2020 14:36 25531 Disable-PSRemoting.md
+				----- 05/20/2020 14:36 7852 Disable-PSSessionConfiguration.md
+				----- 05/20/2020 14:36 25355 Disconnect-PSSession.md
+				----- 05/20/2020 14:36 3491 Enable-ExperimentalFeature.md
+				----- 05/20/2020 14:36 13310 Enable-PSRemoting.md
+				----- 05/20/2020 14:36 8401 Enable-PSSessionConfiguration.md
+				----- 05/20/2020 14:36 9531 Enter-PSHostProcess.md
+				...
+				next page; next line; Q quit
+			  </pre
+            >
+          </code>
+        </article>
+      </section>
+      <section class="main-section" id="Objects_in_the_pipeline">
+        <header>
+          <p>Objects in the pipeline</p>
+        </header>
+        <article>
+          <p>
+            When you run a cmdlet in PowerShell, you see text output because it
+            is necessary to represent objects as text in a console window. The
+            text output may not display all of the properties of the object
+            being output.
+          </p>
+          <p>
+            For example, consider the Get-Location cmdlet. The text output is a
+            summary of information, not a complete representation of the object
+            returned by Get-Location. The heading in the output is added by the
+            process that formats the data for onscreen display.
+          </p>
+          <code>
+            <pre>
+				PowerShell:
+				Get-Location
+			  </pre
+            >
+          </code>
+          <code>
+            <pre>
+				Output:
+				Path
+				----
+				C:\
+			  </pre
+            >
+          </code>
+          <p>
+            Piping the output to the Get-Member cmdlet displays information
+            about the object returned by Get-Location.
+          </p>
+          <code>
+            <pre>
+				PowerShell:
+				Get-Location | Get-Member
+			  </pre
+            >
+          </code>
+          <code>
+            <pre>
+				Output:
+				TypeName: System.Management.Automation.PathInfo
+
+				Name MemberType Definition
+				---- ---------- ----------
+				Equals Method bool Equals(System.Object obj)
+				GetHashCode Method int GetHashCode()
+				GetType Method type GetType()
+				ToString Method string ToString()
+				Drive Property System.Management.Automation.PSDriveInfo Drive {get;}
+				Path Property string Path {get;}
+				Provider Property System.Management.Automation.ProviderInfo Provider {get;}
+				ProviderPath Property string ProviderPath {get;}
+			  </pre
+            >
+          </code>
+          <p>
+            <code>Get-Location</code> returns a PathInfo object that contains
+            the current path and other information.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="Built-in_help_system">
+        <header>
+          <p>Built-in help system</p>
+        </header>
+        <article>
+          <p>
+            Similar to Unix <code>man</code> pages, PowerShell includes detailed
+            help articles that explain PowerShell concepts and command syntax.
+            Use the <code>Get-Help</code> cmdlet to display these articles at
+            the command prompt or view the most recently updated versions of
+            these articles in the PowerShell documentation online.
+          </p>
+        </article>
+      </section>
+      <section class="main-section" id="More_on_powershell">
+        <header>
+          <p>More on Powershell</p>
+        </header>
+        <article>
+          <ul>
+            <li>
+              <a
+                href="https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Powershell on Microsoft Docs</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.techrepublic.com/article/5-changes-coming-to-powershell-7-0/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >PowerShell 7.0: Eight changes you need to know</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://en.wikipedia.org/wiki/PowerShell"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Powershell on wikipedia</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://docs.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-70?view=powershell-7"
+                target="_blank"
+                rel="noopener noreferrer"
+                >What's New in PowerShell 7.0</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://github.com/PowerShell/powershell/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Realeases</a
+              >
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
     <div class="footer">
-      <p>freeCodeCamp Survey Form project by Jakob Dahl</p>
+      <p>
+        freeCodeCamp
+        <a
+          href="https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-technical-documentation-page"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Product Technical Documentation project</a
+        >
+        by Jakob Dahl
+      </p>
       <p>
         Code is on
         <a
-          href="https://github.com/saadanerdetbare/surveyform"
+          href="https://github.com/saadanerdetbare/techdoc"
           target="_blank"
           rel="noopener noreferrer"
           >github</a
